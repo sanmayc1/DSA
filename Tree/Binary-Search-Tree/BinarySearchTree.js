@@ -35,6 +35,20 @@ class BinarySearchTree {
       }
     }
   }
+  bfs(){
+    let queue = [this.root]
+
+    while(queue.length){
+      let node = queue.shift()
+      console.log(node.data)
+      if(node.left){
+        queue.push(node.left)
+      }
+      if(node.right){
+        queue.push(node.right)
+      }
+    }
+  }
 
   inOrder(root = this.root) {
     if (!root) return;
@@ -104,6 +118,8 @@ class BinarySearchTree {
     }
   }
 
+
+
   isBalanced() {
     return this.checkBalanced(this.root) !== -1;
   }
@@ -146,7 +162,7 @@ class BinarySearchTree {
   let result = null
 
   function inorder(node){
-    if(!node || count > 2)return
+    if(!node || count >= 2)return
     inorder(node.left)
     count++
     if(count === 2){
@@ -172,4 +188,7 @@ bst.inOrder();
 console.log(bst.depth(5));
 console.log(bst.height());
 console.log(bst.isBalanced());
-console.log(bst.test())
+console.log("small",bst.secondSmallest())
+
+console.log("bfs")
+bst.bfs()
