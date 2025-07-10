@@ -189,6 +189,5 @@ console.log(bst.depth(5));
 console.log(bst.height());
 console.log(bst.isBalanced());
 console.log("small",bst.secondSmallest())
-
 console.log("bfs")
 bst.bfs()
